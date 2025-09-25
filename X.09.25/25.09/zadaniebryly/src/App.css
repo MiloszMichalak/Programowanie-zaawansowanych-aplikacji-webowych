@@ -1,0 +1,72 @@
+.App {
+  background-color: #a2d9ef;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1{
+  color: #1d0684;
+  font-size: 62px;
+}
+
+table{
+  border-collapse:collapse;
+}
+
+th,td {
+  border: 2px solid #99bff1;
+}
+
+th {
+  font-size: 32px;
+  font-style: italic;
+  color: #8b018c;
+  font-family: serif;
+  font-weight: bold;
+}
+
+/* td{
+  text-align: center;
+} */
+
+.name{
+  color: #b6321b;
+  font-style: italic;
+  font-size: 28px;
+}
+
+.wzor{
+  color: #8c27d1;
+  font-size: 28px;
+  font-style: italic;
+}
+
+.measurement{
+  color: #0b4c37;
+  font-size: 20px;
+}
+
+.values {
+  font-size: 30px;
+  color:#600c09;
+}
+
+img{
+  width: 30%;
+}
+
+table {
+  background-color: #1195e2;
+  width: 90vw;
+  height: 70vh;
+}
+
+tr:nth-child(even){
+  background-color: #307fce;
+}
+
+
