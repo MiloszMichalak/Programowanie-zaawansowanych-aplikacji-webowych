@@ -13,7 +13,11 @@ function FormatTekstu(napis) {
   return napis.charAt(0).toUpperCase() + napis.slice(1).toLowerCase();
 }
 
+<<<<<<< HEAD
 export default function App() {
+=======
+function App() {
+>>>>>>> 139de4c4fedd29687cb1c5c1549002d0723b002f
   return (
     <div className="App">
       <table cellPadding="0" cellSpacing="0">
@@ -41,3 +45,8 @@ export default function App() {
     </div>
   );
 }
+<<<<<<< HEAD
+=======
+
+export default App;
+>>>>>>> 139de4c4fedd29687cb1c5c1549002d0723b002f
