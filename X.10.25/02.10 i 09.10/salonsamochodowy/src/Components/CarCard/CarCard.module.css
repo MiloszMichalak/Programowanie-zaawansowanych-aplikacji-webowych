@@ -1,0 +1,9 @@
+.carImg {
+    width: 75%;
+}
+
+.carBrand {
+    font-weight: bold;
+    font-size: 24px;
+    color: #f79f9f;
+}
