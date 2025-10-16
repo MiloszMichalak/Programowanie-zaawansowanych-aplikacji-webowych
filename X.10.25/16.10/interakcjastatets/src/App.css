@@ -1,0 +1,27 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+}
+
+button {
+  margin: 10px;
+  border: white 2px solid;
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #646cff;
+}
