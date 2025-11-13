@@ -13,8 +13,8 @@ class Books extends Component {
                 {id: 103, tytul: "Wladca Pierscieni", autor: "J. R. Tolkien", stron: "669"},
                 {id: 104, tytul: "Stary czlowkiek i morze", autor: "E. Hemingway", stron: "226"}
             ]
-            };
-        }
+        };
+    }
     updateBooks = ()=>{
         this.setState({
             ksiazki:[
