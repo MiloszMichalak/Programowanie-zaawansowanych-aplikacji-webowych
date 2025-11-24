@@ -1,4 +1,4 @@
-const { useState } = require("react");
+import { useState } from "react";
 
 export default function EmailInput() {
     const [errorMessage, setErrorMessage] = useState("");
