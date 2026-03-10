@@ -1,4 +1,4 @@
-import propTypes from "prop-types"
+import PropTypes from "prop-types"
 
 export default function ItemCategory(props){
     return (
@@ -7,5 +7,5 @@ export default function ItemCategory(props){
 }
 
 ItemCategory.propTypes = {
-    category: propTypes.string.isRequired
+    category: PropTypes.string.isRequired
 }

@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function ItemCard(props){
     const [itemCount, setItemCount] = useState(props.count)
 
-    const updateCount = (newCount) => {
+    function updateCount(newCount) {
         setItemCount(newCount)
         props.onCountChange(props.id, newCount)
     }

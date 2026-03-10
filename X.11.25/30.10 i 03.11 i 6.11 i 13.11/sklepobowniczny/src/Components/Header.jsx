@@ -1,4 +1,4 @@
-import propTypes from "prop-types"
+import PropTypes from "prop-types"
 
 export default function Header(props) {
     return (
@@ -7,5 +7,5 @@ export default function Header(props) {
 }
 
 Header.propTypes = {
-    name: propTypes.string.isRequired
+    name: PropTypes.string.isRequired
 }

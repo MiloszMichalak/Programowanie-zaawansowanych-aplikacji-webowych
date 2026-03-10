@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
 
-const MyInput = props => {
-    const { type, label, name, value, className, onChange } = props;
+export default function MyTextArea(props){
+    const {label, type, name, value, className, onChange} = props;
     return (
         <div>
-            <label htmlFor={name}>{label}:</label>
-            <input
-                name={name}
+            <label htmlFor={name}>{label}: </label>
+            <textarea
                 id={name}
+                name={name}
                 type={type}
                 value={value}
                 className={className}
@@ -15,15 +15,13 @@ const MyInput = props => {
             />
         </div>
     );
-};
+}
 
-MyInput.propTypes = {
+MyTextArea.propTypes = {
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     value: PropTypes.string,
     type: PropTypes.string,
     className: PropTypes.string,
-    onChange: PropTypes.func
-};
-
-export default MyInput;
+    onChange: PropTypes.func,
+}
