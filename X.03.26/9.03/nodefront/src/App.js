@@ -1,25 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [data, setData] = useState({message: null, name: null, email: null});
+	useEffect(() => {
+		const osoba = { name: "Jan Kowalski", email: "jan.kowalski@example.com" };
+
+		fetch('http://localhost:3100/api/data', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(osoba)
+		})
+		.then((response) => response.json())
+		.then((data) => {
+			setData(
+				{
+					message: data.message, 
+					name: data.zwrot.name,
+					email: data.zwrot.email
+				}
+			)
+		}).catch( (error) => console.log(error));
+	}, []);
+  
+
+    return (
+    	<div className="App">
+        	<h3>Odpowiedz od serwera: {data.message} {data.name} {data.email}</h3>
+    	</div>
+  	);
 }
 
 export default App;
