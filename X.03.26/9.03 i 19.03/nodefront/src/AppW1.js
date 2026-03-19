@@ -2,6 +2,8 @@ import './App.css';
 import { useState, useEffect } from 'react';
 
 function App() {
+	// wersja 1
+
     const [data, setData] = useState({message: null, name: null, email: null});
 	useEffect(() => {
 		const osoba = { name: "Jan Kowalski", email: "jan.kowalski@example.com" };
