@@ -3,7 +3,7 @@ import React from "react";
 //funkcja doSerwera
 function doSerwera(d1, d2, op, setResult) {
     const dataToServer = { l1: d1, l2: d2, oper: op };
-    fetch('http://localhost:3100/math/operator', {
+    fetch('http://localhost:3100/math/operators', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -11,7 +11,7 @@ function doSerwera(d1, d2, op, setResult) {
         body: JSON.stringify(dataToServer)
     })
     .then(response => response.json())
-    .then((json_data) => setResult(json_data.result))
+    .then((json_data) => setResult(json_data.wynik))
     .catch(error => {
         console.error('Error:', error);
     });
