@@ -10,7 +10,11 @@ app.use(express.json());
 app.post('/math/check/triangle', (req, res) => {
     const daneOtrzymane = req.body;
     
-    let dane = sprawdz(daneOtrzymane.type, daneOtrzymane.value1, daneOtrzymane.value2, daneOtrzymane.value3);
+    let value1 = parseFloat(daneOtrzymane.value1);
+    let value2 = parseFloat(daneOtrzymane.value2);
+    let value3 = parseFloat(daneOtrzymane.value3);
+
+    let dane = sprawdz(daneOtrzymane.type, value1, value2, value3);
     
     res.status(200).json(
         { type: dane.type, info: dane.info }
@@ -59,9 +63,6 @@ function sprawdz(type, value1, value2, value3) {
 }
 
 function sprawdzBoki(a, b, c) {
-    a = parseFloat(a);
-    b = parseFloat(b);
-    c = parseFloat(c);
     if (a > 0 && b > 0 && c > 0) {
         if (a + b > c && a + c > b && b + c > a) {
             return true;
@@ -74,9 +75,6 @@ function sprawdzBoki(a, b, c) {
 }
 
 function sprawdzKaty(kat1, kat2, kat3) {
-    kat1 = parseFloat(kat1);
-    kat2 = parseFloat(kat2);
-    kat3 = parseFloat(kat3);
     if (kat1 > 0 && kat2 > 0 && kat3 > 0) {
         if (kat1 + kat2 + kat3 === 180) {
             return true;

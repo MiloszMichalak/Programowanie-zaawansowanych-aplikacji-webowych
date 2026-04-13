@@ -24,12 +24,7 @@ function App() {
 		outputInfo: ""
 	});
 
-	function getTriangleImage(type) {
-		const triangle = triangleCatalog.find((triangle) => triangle.type === type);
-		return triangle ? triangle.image : null;
-	}
-
-	const triangleCatalog = [
+	const triangleImages = [
 		{ type: "dowolny", image: dowolny },
 		{ type: "ostrokatny", image: ostrokatny },
 		{ type: "rozwartokatny", image: rozwartokatny },
@@ -38,12 +33,28 @@ function App() {
 		{ type: "rownoramienny", image: rownoramienny },
     ];
 
+	function getTriangleImage(type) {
+		const triangle = triangleImages.find((triangle) => triangle.type === type);
+		return triangle ? triangle.image : null;
+	}
+
 	function handleChange(event) {
 		const { name, value } = event.target;
 		setState((prevState) => ({
 			...prevState,
 			[name]: value
 		}))
+	}
+
+	function handleSubmit(event) {
+		event.preventDefault();
+		
+		if (state.type === 0){
+			alert("Prosze okreslic rodzaj danych")
+			return;
+		}
+
+		doSerwera();
 	}
 
 	function doSerwera() {
@@ -60,17 +71,6 @@ function App() {
 		.catch(error => {
 			console.error('Error:', error);
 		});
-	}
-
-	function handleSubmit(event) {
-		event.preventDefault();
-		
-		if (state.type == 0){
-			alert("Prosze okreslic rodzaj danych")
-			return;
-		}
-
-		doSerwera();
 	}
 
     return (
