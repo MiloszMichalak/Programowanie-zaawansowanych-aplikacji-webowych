@@ -14,6 +14,7 @@ export default function Startowa() {
             <h1>Startowa</h1>
             <button onClick={() => navigate('/ksiazki')}>Książki</button>
             <button onClick={() => navigate('/autorzy')}>Autorzy</button>
+            <button onClick={() => navigate('/autor')}>Szukaj autora</button>
         </div>
     );
 }

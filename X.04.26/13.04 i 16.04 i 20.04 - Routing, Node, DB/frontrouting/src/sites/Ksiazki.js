@@ -11,6 +11,7 @@
 
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import KsiazkiLista from '../components/KsiazkiLista';
 
 
 const Ksiazki = () => {
@@ -45,28 +46,7 @@ const Ksiazki = () => {
     return (
         <div>
             <h3>Ksiazki</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Imie</th>
-                        <th>Nazwisko</th>
-                        <th>Tytul</th>
-                        <th>Cena</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {ksiazki.map((ksiazka, index) => (
-                        <tr key={ksiazka.IDksiazka}>
-                            <td>{ksiazka.imie} </td>
-                            <td>{ksiazka.nazwisko}</td>
-                            <td>{ksiazka.tytul}</td>
-                            <td>{ksiazka.cena}</td>
-                        </tr>
-
-                    ))
-                    }
-                </tbody>
-            </table>
+            <KsiazkiLista ksiazki={ksiazki}/>
             <button onClick={goToHome}>Strona startowa</button>
         </div>
     );
