@@ -1,0 +1,153 @@
+.app {
+    text-align: center;
+    color: #f4f7fb;
+    background: #364b5d;
+}
+
+.header {
+    width: 1100px;
+    margin: auto;
+    padding: 12px;
+}
+
+.header img {
+    display: block;
+    width: 100%;
+    margin: 24px auto;
+}
+
+.header h1 {
+    font-size: 34px;
+}
+
+.header h2 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.home,
+.page {
+    width: 1100px;
+    margin: auto;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.home {
+    text-align: left;
+}
+
+.cols {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.cols section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cols p {
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.cols button {
+    width: fit-content;
+}
+
+.content {
+    width: 700px;
+    text-align: left;
+}
+
+table {
+    color: #f4f7fb;
+    margin-top: 18px;
+    border-collapse: collapse;
+    border: none;
+}
+
+th,td {
+    border: none;
+    padding: 8px;
+}
+
+.back {
+    align-self: flex-start;
+}
+
+.title {
+    margin: 10px 0 18px;
+    color: #ffd166;
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+}
+
+button {
+    border: 2px solid #182331;
+    border-radius: 3px;
+    padding: 7px 11px;
+    margin: 6px;
+    background: #556777;
+    color: #ffffff;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #6a7c8d;
+}
+
+form {
+    display: grid;
+    gap: 12px;
+    max-width: 560px;
+}
+
+form div {
+    display: grid;
+    gap: 6px;
+}
+
+label {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+input,
+select {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #9cadba;
+    border-radius: 0;
+    padding: 4px 6px;
+    background: #f4f7fb;
+    color: #10202d;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #ffffff;
+    box-shadow: none;
+}
+
+ol,
+ul {
+    color: #f4f7fb;
+    padding-left: 24px;
+}
+
+a {
+    color: #ffffff;
+}

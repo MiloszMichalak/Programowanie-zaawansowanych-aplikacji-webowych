@@ -52,7 +52,7 @@ app.get('/czytelnicy', async (req, res) => {
   );
 });
 
-app.get('/czytelnicy/wypozyczenia', async (req, res) => {
+app.post('/czytelnicy/wypozyczenia', async (req, res) => {
   const body = req.body;
   let odp = await listaWypozyczen(body.imie, body.nazwisko);
   console.log('ODP: ', odp);
@@ -95,7 +95,6 @@ app.get('/ksiazki', async (req, res) => {
   );
 });
 
-
 async function listaCzytelnikow() {
   const [rows] = await pool.execute('SELECT * FROM `czytelnicy`');
   console.log('Query Results:', rows)
@@ -110,7 +109,7 @@ async function listaWypozyczen(imie, nazwisko) {
 
 async function wstawAutora(imie, nazwisko) {
   const odp = await pool.execute('INSERT INTO `autorzy`(`IDautor`, `nazwisko`, `imie`) VALUES (null,?,?)', [nazwisko, imie]);
-  return odp[0].warningStatus; // 0 jesli sie udalo
+  return odp[0].warningStatus;
 }
 
 async function wstawKsiazke(idAutora, tytul, cena, dataZakupu) {
@@ -125,7 +124,7 @@ async function listaAutorow() {
 }
 
 async function listaKsiazek() {
-  const [rows] = await pool.execute('SELECT autorzy.imie, autorzy.nazwisko, ksiazki.tytul, ksiazki.cena FROM ksiazki NATURAL JOIN autorzy;');
+  const [rows] = await pool.execute('SELECT autorzy.imie, autorzy.nazwisko, ksiazki.tytul, ksiazki.cena FROM ksiazki INNER JOIN autorzy ON ksiazki.autor = autorzy.IDautor;');
   console.log('Query Results:', rows)
   return rows;
 }
